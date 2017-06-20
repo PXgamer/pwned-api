@@ -31,7 +31,7 @@ class Breach extends Model
 
     public function populateByBreachName()
     {
-        $oResponse = Calls::curlUrl('GET', 'breach/' . $this->name);
+        $oResponse = Calls::curlUrl(Calls::HTTP_MODE_GET, 'breach/' . $this->name);
 
         $oBody = \GuzzleHttp\json_decode($oResponse->getBody());
 
