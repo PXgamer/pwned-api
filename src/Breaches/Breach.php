@@ -31,23 +31,35 @@ class Breach extends Model
 
     public function populateByBreachName()
     {
-        $oResponse = Calls::curlUrl(Calls::HTTP_MODE_GET, 'breach/' . $this->name);
+        $oResponse = Calls::curlUrl(
+            Calls::HTTP_MODE_GET,
+            'breach/' . $this->name
+        );
 
-        $oBody = \GuzzleHttp\json_decode($oResponse->getBody());
+        $oBreach = \GuzzleHttp\json_decode($oResponse->getBody());
 
-        $this->name = $oBody->Name ?? null;
-        $this->title = $oBody->Title ?? null;
-        $this->domain = $oBody->Domain ?? null;
-        $this->breachDate = $oBody->BreachDate ?? null;
-        $this->addedDate = $oBody->AddedDate ?? null;
-        $this->modifiedDate = $oBody->ModifiedDate ?? null;
-        $this->pwnCount = $oBody->PwnCount ?? null;
-        $this->description = $oBody->Description ?? null;
-        $this->dataClasses = $oBody->DataClasses ?? null;
-        $this->isVerified = $oBody->IsVerified ?? null;
-        $this->isFabricated = $oBody->IsFabricated ?? null;
-        $this->isSensitive = $oBody->IsSensitive ?? null;
-        $this->isRetired = $oBody->IsRetired ?? null;
-        $this->isSpamList = $oBody->IsSpamList ?? null;
+        $this->populateFields($oBreach);
+
+        return $this;
+    }
+
+    public function populateFields($oBreach)
+    {
+        $this->name = $oBreach->Name ?? null;
+        $this->title = $oBreach->Title ?? null;
+        $this->domain = $oBreach->Domain ?? null;
+        $this->breachDate = $oBreach->BreachDate ?? null;
+        $this->addedDate = $oBreach->AddedDate ?? null;
+        $this->modifiedDate = $oBreach->ModifiedDate ?? null;
+        $this->pwnCount = $oBreach->PwnCount ?? null;
+        $this->description = $oBreach->Description ?? null;
+        $this->dataClasses = $oBreach->DataClasses ?? null;
+        $this->isVerified = $oBreach->IsVerified ?? null;
+        $this->isFabricated = $oBreach->IsFabricated ?? null;
+        $this->isSensitive = $oBreach->IsSensitive ?? null;
+        $this->isRetired = $oBreach->IsRetired ?? null;
+        $this->isSpamList = $oBreach->IsSpamList ?? null;
+
+        return $this;
     }
 }
