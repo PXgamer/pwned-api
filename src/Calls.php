@@ -33,7 +33,10 @@ class Calls
 
         if (!self::$client) {
             self::$client = new Client([
-                'base_uri' => Config::BASE_URL . 'v' . Config::CURRENT_API_VERSION . '/'
+                'base_uri' => Config::BASE_URL . 'v' . Config::CURRENT_API_VERSION . '/',
+                'headers' => [
+                    'User-Agent' => Config::getClientName()
+                ]
             ]);
         }
 
