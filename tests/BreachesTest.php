@@ -4,6 +4,8 @@ use pxgamer\PwnedApi\Breaches;
 
 class BreachesTest extends \PHPUnit\Framework\TestCase
 {
+    public $sTestName = 'adobe.com';
+
     public function testCanPopulateBreachesWithoutDomain()
     {
         $oBreaches = new Breaches\Breaches();
@@ -14,9 +16,7 @@ class BreachesTest extends \PHPUnit\Framework\TestCase
 
     public function testCanPopulateBreachesWithDomain()
     {
-        $sBreachName = 'adobe.com';
-
-        $oBreaches = new Breaches\Breaches($sBreachName);
+        $oBreaches = new Breaches\Breaches($this->sTestName);
         $oBreaches->populate();
 
         $this->assertObjectHasAttribute('breaches', $oBreaches);
