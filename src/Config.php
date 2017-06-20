@@ -10,7 +10,7 @@ class Config
         Calls::HTTP_MODE_GET
     ];
 
-    private static $clientName = null;
+    private static $clientName = 'PwnedApi';
 
     public static function setClientName($sClientName)
     {
