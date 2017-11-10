@@ -5,11 +5,25 @@ namespace pxgamer\PwnedApi\Pastes;
 use pxgamer\PwnedApi\Calls;
 use pxgamer\PwnedApi\Model;
 
+/**
+ * Class Account
+ */
 class Account extends Model
 {
+    /**
+     * @var null
+     */
     private $accountName;
+    /**
+     * @var array
+     */
     private $pastes;
 
+    /**
+     * Account constructor.
+     *
+     * @param null $sAccountName
+     */
     public function __construct($sAccountName = null)
     {
         if ($sAccountName) {
@@ -17,6 +31,9 @@ class Account extends Model
         }
     }
 
+    /**
+     * @return $this
+     */
     public function populateFromAccountName()
     {
         if (!$this->accountName) {

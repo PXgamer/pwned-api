@@ -6,7 +6,6 @@ use pxgamer\PwnedApi\Calls;
 
 /**
  * Class DataClasses
- * @package pxgamer\PwnedApi\Data
  */
 class DataClasses
 {

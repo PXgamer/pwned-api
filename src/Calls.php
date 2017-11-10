@@ -6,7 +6,6 @@ use GuzzleHttp\Client;
 
 /**
  * Class Calls
- * @package pxgamer\PwnedApi
  */
 class Calls
 {
@@ -32,12 +31,14 @@ class Calls
         }
 
         if (!self::$client) {
-            self::$client = new Client([
+            self::$client = new Client(
+                [
                 'base_uri' => Config::BASE_URL . 'v' . Config::CURRENT_API_VERSION . '/',
                 'headers' => [
                     'User-Agent' => Config::getClientName()
                 ]
-            ]);
+                ]
+            );
         }
 
         $res = self::$client->request($sMode, $sUrl);

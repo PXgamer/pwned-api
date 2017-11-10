@@ -5,6 +5,9 @@ namespace pxgamer\PwnedApi\Breaches;
 use pxgamer\PwnedApi\Calls;
 use pxgamer\PwnedApi\Model;
 
+/**
+ * Class Breach
+ */
 class Breach extends Model
 {
     private $title;
@@ -22,6 +25,11 @@ class Breach extends Model
     private $isRetired;
     private $isSpamList;
 
+    /**
+     * Breach constructor.
+     *
+     * @param null $sBreachName
+     */
     public function __construct($sBreachName = null)
     {
         if ($sBreachName) {
@@ -29,6 +37,9 @@ class Breach extends Model
         }
     }
 
+    /**
+     * @return $this
+     */
     public function populateByBreachName()
     {
         $oResponse = Calls::curlUrl(
@@ -43,6 +54,10 @@ class Breach extends Model
         return $this;
     }
 
+    /**
+     * @param $oBreach
+     * @return $this
+     */
     public function populateFields($oBreach)
     {
         $this->name = $oBreach->Name ?? null;

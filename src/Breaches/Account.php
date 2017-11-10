@@ -5,11 +5,25 @@ namespace pxgamer\PwnedApi\Breaches;
 use pxgamer\PwnedApi\Calls;
 use pxgamer\PwnedApi\Model;
 
+/**
+ * Class Account
+ */
 class Account extends Model
 {
+    /**
+     * @var null
+     */
     private $accountName;
+    /**
+     * @var array
+     */
     private $breaches;
 
+    /**
+     * Account constructor.
+     *
+     * @param null $sAccountName
+     */
     public function __construct($sAccountName = null)
     {
         if ($sAccountName) {
@@ -17,6 +31,10 @@ class Account extends Model
         }
     }
 
+    /**
+     * @param bool $bTruncateResults
+     * @return $this
+     */
     public function populateFromAccountName($bTruncateResults = false)
     {
         if (!$this->accountName) {
