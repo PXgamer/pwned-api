@@ -7,6 +7,7 @@ use pxgamer\PwnedApi\Model;
 
 /**
  * Class Breaches
+ *
  * @package pxgamer\PwnedApi\Breaches
  */
 class Breaches extends Model
@@ -22,6 +23,7 @@ class Breaches extends Model
 
     /**
      * Breaches constructor.
+     *
      * @param null|string $sBreachDomain
      */
     public function __construct($sBreachDomain = null)

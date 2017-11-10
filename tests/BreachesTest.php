@@ -1,8 +1,10 @@
 <?php
 
-use pxgamer\PwnedApi\Breaches;
+namespace pxgamer\PwnedApi;
 
-class BreachesTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class BreachesTest extends TestCase
 {
     public $sTestName = 'adobe.com';
 

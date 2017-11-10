@@ -1,8 +1,10 @@
 <?php
 
-use pxgamer\PwnedApi\Breaches;
+namespace pxgamer\PwnedApi;
 
-class AccountTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class AccountTest extends TestCase
 {
     public $sTestName = 'test@example.com';
 

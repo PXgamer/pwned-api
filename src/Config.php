@@ -2,6 +2,9 @@
 
 namespace pxgamer\PwnedApi;
 
+/**
+ * Class Config
+ */
 class Config
 {
     const BASE_URL = 'https://haveibeenpwned.com/api/';
@@ -10,13 +13,23 @@ class Config
         Calls::HTTP_MODE_GET
     ];
 
+    /**
+     * @var string
+     */
     private static $clientName = 'PwnedApi';
 
+    /**
+     * @param $sClientName
+     * @return mixed
+     */
     public static function setClientName($sClientName)
     {
         return (self::$clientName = $sClientName);
     }
 
+    /**
+     * @return string
+     */
     public static function getClientName()
     {
         return self::$clientName;
