@@ -1,8 +1,10 @@
 <?php
 
-use pxgamer\PwnedApi\Data;
+namespace pxgamer\PwnedApi;
 
-class DataClassesTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class DataClassesTest extends TestCase
 {
     public function testCanPopulateDataClasses()
     {

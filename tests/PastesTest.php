@@ -1,8 +1,10 @@
 <?php
 
-use pxgamer\PwnedApi\Pastes;
+namespace pxgamer\PwnedApi;
 
-class PastesTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class PastesTest extends TestCase
 {
     public $sTestName = 'test@example.com';
 
